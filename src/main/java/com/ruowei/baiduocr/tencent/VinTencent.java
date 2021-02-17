@@ -21,7 +21,7 @@ public class VinTencent {
 //        try{
 //
 //            //去腾讯开通后使用自己账号的秘钥
-//            Credential cred = new Credential("AKIDzsZ4lDIVMyQs1EbuN2SjmcBmCJiH7eU4", "WlnPAfvAKF2bzQbolSs4jWhcojHdsrb7");
+//            Credential cred = new Credential("xxx", "xxx");
 //
 //            HttpProfile httpProfile = new HttpProfile();
 //            httpProfile.setEndpoint("ocr.tencentcloudapi.com");
@@ -46,7 +46,7 @@ public class VinTencent {
     public static void main(String[] args) {
         try {
 
-            Credential cred = new Credential("AKIDzsZ4lDIVMyQs1EbuN2SjmcBmCJiH7eU4", "WlnPAfvAKF2bzQbolSs4jWhcojHdsrb7");
+            Credential cred = new Credential("xxx", "xxx");
 
             HttpProfile httpProfile = new HttpProfile();
             httpProfile.setEndpoint("ocr.tencentcloudapi.com");
