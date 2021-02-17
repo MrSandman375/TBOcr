@@ -5,6 +5,8 @@ import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 import com.tencentcloudapi.common.profile.ClientProfile;
 import com.tencentcloudapi.common.profile.HttpProfile;
 import com.tencentcloudapi.ocr.v20181119.OcrClient;
+import com.tencentcloudapi.ocr.v20181119.models.GeneralBasicOCRRequest;
+import com.tencentcloudapi.ocr.v20181119.models.GeneralBasicOCRResponse;
 import com.tencentcloudapi.ocr.v20181119.models.VinOCRRequest;
 import com.tencentcloudapi.ocr.v20181119.models.VinOCRResponse;
 
@@ -14,11 +16,37 @@ import com.tencentcloudapi.ocr.v20181119.models.VinOCRResponse;
  * @Description:
  */
 public class VinTencent {
-    public static void main(String [] args) {
-        try{
+    //汽车vin识别
+    //    public static void main(String [] args) {
+//        try{
+//
+//            //去腾讯开通后使用自己账号的秘钥
+//            Credential cred = new Credential("AKIDzsZ4lDIVMyQs1EbuN2SjmcBmCJiH7eU4", "WlnPAfvAKF2bzQbolSs4jWhcojHdsrb7");
+//
+//            HttpProfile httpProfile = new HttpProfile();
+//            httpProfile.setEndpoint("ocr.tencentcloudapi.com");
+//
+//            ClientProfile clientProfile = new ClientProfile();
+//            clientProfile.setHttpProfile(httpProfile);
+//
+//            OcrClient client = new OcrClient(cred, "ap-beijing", clientProfile);
+//
+//            VinOCRRequest req = new VinOCRRequest();
+//
+//            req.setImageUrl("https://cdn.jsdelivr.net/gh/MrSandman375/pic/20210217135817.png");
+//            VinOCRResponse resp = client.VinOCR(req);
+//
+//            System.out.println(VinOCRResponse.toJsonString(resp));
+//        } catch (TencentCloudSDKException e) {
+//            System.out.println(e.toString());
+//        }
+//
+//    }
+    //普通文字识别（印刷体）
+    public static void main(String[] args) {
+        try {
 
-            //去腾讯开通后使用自己账号的秘钥
-            Credential cred = new Credential("xxx", "xxx");
+            Credential cred = new Credential("AKIDzsZ4lDIVMyQs1EbuN2SjmcBmCJiH7eU4", "WlnPAfvAKF2bzQbolSs4jWhcojHdsrb7");
 
             HttpProfile httpProfile = new HttpProfile();
             httpProfile.setEndpoint("ocr.tencentcloudapi.com");
@@ -28,13 +56,12 @@ public class VinTencent {
 
             OcrClient client = new OcrClient(cred, "ap-beijing", clientProfile);
 
-            VinOCRRequest req = new VinOCRRequest();
+            GeneralBasicOCRRequest req = new GeneralBasicOCRRequest();
+            req.setImageUrl("https://cdn.jsdelivr.net/gh/MrSandman375/pic/20210217140638.png");
 
-            req.setImageUrl("https://cdn.jsdelivr.net/gh/MrSandman375/pic/images39-200630161P0A4.jpg");
-//            req.setImageUrl("C:/Users/Fan/Desktop/39-200630161P0A4.jpg");
-            VinOCRResponse resp = client.VinOCR(req);
+            GeneralBasicOCRResponse resp = client.GeneralBasicOCR(req);
 
-            System.out.println(VinOCRResponse.toJsonString(resp));
+            System.out.println(GeneralBasicOCRResponse.toJsonString(resp));
         } catch (TencentCloudSDKException e) {
             System.out.println(e.toString());
         }

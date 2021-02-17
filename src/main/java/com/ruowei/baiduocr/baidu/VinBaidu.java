@@ -24,7 +24,7 @@ public class VinBaidu {
         String url = "https://aip.baidubce.com/rest/2.0/ocr/v1/vin_code";
         try {
             // 本地文件路径
-            String filePath = "C:/Users/Fan/Desktop/39-200630161P0A4.jpg";
+            String filePath = "C:/Users/Fan/Desktop/test.png";
             byte[] imgData = FileUtil.readFileByBytes(filePath);
             String imgStr = Base64Util.encode(imgData);
             String imgParam = URLEncoder.encode(imgStr, "UTF-8");
@@ -32,7 +32,7 @@ public class VinBaidu {
             String param = "image=" + imgParam;
 
             //
-            String auth = GetToken.getAuth("20sQ7cIG4SAoXdpxQihz2Vfs","AF6LPUC6ZHIn45Rn6X7YGBxdrBMGylsw");
+            String auth = GetToken.getAuth("HDf7FNkwsVMHie62VY4fDS4i","CTAwRv38vXHh8kU6TGuGHIG37rCyEx5Q");
             // 注意这里仅为了简化编码每一次请求都去获取access_token，线上环境access_token有过期时间， 客户端可自行缓存，过期后重新获取。
 //            String accessToken = auth;
             StopWatch stopWatch = new StopWatch();
